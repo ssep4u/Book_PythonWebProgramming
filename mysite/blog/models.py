@@ -1,4 +1,6 @@
 from django.db import models
+from django.core.urlresolvers import reverse
+
 
 class Post(models.Model):
     title = models.CharField("TITLE", max_length=50)
@@ -22,8 +24,8 @@ class Post(models.Model):
         return reverse("blog:post_detail", args=(self.slug,))
         
     def get_previous_post(self):
-        return self.get_previous_post_by_modify_date()
+        return self.get_previous_by_modify_date()
 
     def get_next_post(self):
-        return self.get_next_post_by_modify_date()
+        return self.get_next_by_modify_date()
 
