@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{% block title %} Django Web Programming {% endblock title %}</title>
+    {% load staticfiles %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/base.css' %}" />
+    <link rel="stylesheet" type="text/css" media="screen" href="{% block extrastyle %}{% endblock extrastyle %}" />
+</head>
+
+<body>
+    <div id="header">
+        <h2 class="maintitle">Easy & Fast Django Web Programming</h2>
+        <h4 class="welcome">Welcome, <a href="#">shkim</a>
+            <a href="#">change Password</a>
+            <a href="#">Logout</a>
+        </h4>
+    </div>
+    <div id="menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Bookmark</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Photo</a></li>
+        <li><a href="#">Add&bigtriangledown;</a>
+            <ul>
+                <li><a href="#">Bookmark</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Photo</a></li>
+            </ul>
+        </li>
+
+        <li><a href="#">Change&bigtriangledown;</a>
+            <ul>
+                <li><a href="#">Bookmark</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Photo</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Archive</a></li>
+        <li><a href="#">Search</a></li>
+        <li><a href="#">Admin</a></li>
+    </div>
+    {% block content %} {% endblock content %} {% block footer %} {% endblock footer %}
+</body>
+
+</html>
