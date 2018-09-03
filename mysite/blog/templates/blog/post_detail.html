@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html>
+{% extends "base.html" %}
 
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Post Detail</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
-</head>
+{% block title %}
+post_detail.html
+{% endblock title %}
 
-<body>
+{% block content %}
+<div id="content">
     <h2>{{object.title}}</h2>
     <p class="other_posts">
         {% if object.get_previous_by_modify_date %}
@@ -24,6 +19,5 @@
     <div id="body">
         {{object.content|linebreaks}}
     </div>
-</body>
-
-</html>
+    {% endblock content %}
+</div>

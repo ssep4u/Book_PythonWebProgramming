@@ -1,22 +1,17 @@
-<!DOCTYPE html>
-<html>
+{% extends "base.html" %}
 
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Post Archive</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
-</head>
+{% block title %}
+post_archive.html
+{% endblock title %}
 
-<body>
+{% block content %}
+<div id="content">
     <h1>Post Archives until {% now "N d, Y"%}</h1>
     <ul>
         {% for date in date_list %}
-
+    
         <li style="display:inline;">
-
+    
             <a href="{% url 'blog:post_year_archive' date|date:'Y' %}">Year - {{date|date:'Y'}}</a>
         </li>
         {% endfor %}
@@ -30,7 +25,5 @@
             {% endfor %}
         </ul>
     </div>
-
-</body>
-
-</html>
+</div>
+{% endblock content %}
