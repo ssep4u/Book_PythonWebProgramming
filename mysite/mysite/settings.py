@@ -42,7 +42,12 @@ INSTALLED_APPS = [
     'bookmark.apps.BookmarkConfig',
     'blog.apps.BlogConfig',
     'tagging.apps.TaggingConfig',
+    'disqus',
+    'django.contrib.sites',
 ]
+
+DISQUS_WEBSITE_SHORTNAME = 'python-web-programming-django-nvvkacxpv1'
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -124,3 +129,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'mysite', 'static')]
+
