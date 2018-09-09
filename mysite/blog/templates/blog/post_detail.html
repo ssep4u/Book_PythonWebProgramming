@@ -23,7 +23,7 @@ post_detail.html
     <div>
         <b>TAGS:</b>
         {% load tagging_tags %}
-        {% tag_for_object object as tags %}
+        {% tags_for_object object as tags %}
         {% for tag in tags %}
             <a href="{% url 'blog:tagged_object_list' tag.name %}">{{tag.name}}</a>
         {% endfor %}

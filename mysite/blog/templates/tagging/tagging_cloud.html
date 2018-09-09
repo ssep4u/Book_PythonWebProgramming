@@ -9,13 +9,11 @@ tagging_cloud.html
 {% static "tagging/tag.css" %}
 {% endblock extrastyle %}
 {% block content %}
-
-{% endblock content %}
 <div id="content">
     <h1>Blog Tag Cloud</h1>
     <div class="tag-cloud">
         {% load tagging_tags %}
-        {% tag_cloud_for_model blog.Post as tags with steps=6 min=_count=1 distribution=log %}
+        {% tag_cloud_for_model blog.Post as tags with steps=6 min_count=1 distribution=log %}
         {% for tag in tags %}
             <span class="tag-{{tag.font_size}}">
                 <a href="{% url 'blog:tagged_object_list' tag.name %}">{{tag.name}} ({{tag.font_size}})</a>
@@ -23,3 +21,5 @@ tagging_cloud.html
         {% endfor %}
     </div>
 </div>
+
+{% endblock content %}
