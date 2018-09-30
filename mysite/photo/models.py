@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from .fields import ThumbnailImageField
 
 
@@ -30,4 +31,4 @@ class Photo(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse("photo:Photo_detail", args=(self.id,))
+        return reverse("photo:photo_detail", args=(self.id,))
